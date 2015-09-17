@@ -1,6 +1,6 @@
-# require "./hacktive_record.rb"
+require "./hacktive_record.rb"
 
-class Speaker
+class Speaker < HacktiveRecord::Base
 
   attr_accessor :first_name, :last_name, :email, :id
 
@@ -8,6 +8,10 @@ class Speaker
     @first_name = args[:first_name]
     @last_name = args[:last_name]
     @email = args[:email]
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
 end

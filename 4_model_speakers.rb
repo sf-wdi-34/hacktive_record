@@ -8,6 +8,9 @@ require './models/speaker.rb'
             email: FFaker::Internet.free_email,
             phone: FFaker::PhoneNumber.short_phone_number
           }
-  speaker = Speaker.new(args)
+  speaker = Speaker.create(args)
+end
+
+Speaker.all.each do |speaker|
   p speaker
 end
