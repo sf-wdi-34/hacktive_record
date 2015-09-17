@@ -1,5 +1,5 @@
 require 'ffaker'
-require './app/models/speaker.rb'
+require './models/speaker.rb'
 
 5.times do
   args = {
