@@ -19,5 +19,9 @@ end
 puts "\nTalks"
 puts "====="
 5.times do
-  p ""
+  talk = {
+    topic: FFaker::Company.catch_phrase,
+    duration: 15
+  }
+  puts talk
 end
