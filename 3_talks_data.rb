@@ -17,7 +17,7 @@ puts "====="
 5.times do
   talk = {
     topic: FFaker::Company.catch_phrase,
-    duration: 15
+    duration: rand(1..6)*15
   }
   puts talk
 end
