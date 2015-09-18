@@ -1,9 +1,9 @@
 require 'ffaker'
-require './app/models/speaker.rb'
-require './app/models/talk.rb'
+require './models/speaker.rb'
+require './models/talk.rb'
 
 5.times do
-  p ""
+  p "created an instance of a speaker..."
 end
 
 puts "Speakers"

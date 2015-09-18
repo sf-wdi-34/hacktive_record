@@ -3,11 +3,11 @@ require 'ffaker'
 puts "Speakers"
 puts "========"
 5.times do
-  p ""
+  p {} # a speaker data object
 end
 
 puts "\nTalks"
 puts "====="
 5.times do
-  p ""
+  p {} # a talk data object
 end

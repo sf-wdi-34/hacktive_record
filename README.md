@@ -11,7 +11,7 @@ Modify the output to use __string interpolation__, and your own name, address, a
 Bonus: print it ten times.
 
 ### 2. Motivational Speakers
-When you run `ruby 1_speakers.rb` you should see 10 lines of output, formatted like so:
+When you run `ruby 2_speakers.rb` you should see 10 lines of output, formatted like so:
 
     Reichel Theresia, giovani@gmail.com, 415-253-3253
     Botsford Vicenta, ernestine@gmail.com, 716-282-1443
@@ -21,7 +21,18 @@ When you run `ruby 1_speakers.rb` you should see 10 lines of output, formatted l
     
 This output should _NOT_ be hardcoded. It should change for every run of the file!
 
-To achieve this goal, you will need to familiarize yourself with the `ffaker` gem. [Ffaker documentation](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)
+To achieve this goal, you will need to familiarize yourself with the `ffaker` gem. 
+
+First, install the gems in your `Gemfile`. Simply run:  
+```bash
+bundle install
+#or just
+bundle
+```
+
+You can also install gems individually (e.g. `gem install ffaker`), but `bundle` is better in this case.
+
+Now dive into [FFaker's Documentation](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)!
 
 ####Pro Tip: Requiring Gems & the Ruby Console
 You're probably asking yourself, "how can I play with this ffaker data?". Why, in the Ruby Console of course!
@@ -83,7 +94,7 @@ puts Speaker.new({first: "Reichel", last: "Theresia", email: "giovani@gmail.com"
 ```
 
 ### 5. Hacktive Record
-Now we're going to play with a super simplified version of Active Record I've dubbed "HactiveRecord". HactiveRecord will give our models the ability to `save`, `create` and find `all` records (or "instances") of our class.
+Now we're going to play with a super-simplified version of Active Record I've dubbed "HacktiveRecord". HacktiveRecord will give our models the ability to `save`, `create` and find `all` records (or "instances") of our class.
 
 Let's start by modifying our `Speaker` class so that it inherits from `HacktiveRecord::Base`.
 
@@ -109,7 +120,7 @@ We can also query for `all` the records in our pretend "database":
 puts Speaker.all
 ```
 
-**Stretch**: Can you model both a `Speaker` and a `Talk` object, using our simplified HacktiveRecord? (Hint: you may need to specify `speaker_id` on your talk objects to you know who they belong to!)
+**Stretch**: Can you model both a `Speaker` and a `Talk` object, using our simplified HacktiveRecord? (Hint: you may need to specify `speaker_id` on your talk objects so you know who they belong to!)
 
 #Ready for Rails!
 This has been a very light introduction to faking data, seeding your database, and working with models and inheritance. We're ready to dive into rails and work with ActiveRecord!
@@ -119,6 +130,7 @@ This has been a very light introduction to faking data, seeding your database, a
 ``` bash
 rails new conference_app -T -d postgresql
 cd conference_app
+bundle
 git init
 git add . -A
 git commit -m "inital commit, rails skeleton"
@@ -157,6 +169,8 @@ Talk
  #=> Talk(id: integer, topic: string, duration: integer, created_at: datetime, updated_at: datetime) 
 ```
 
+(You may need to "connect" to your database in the rails console. Just follow the instructions.)
+
 **Create your first record**!
 ``` ruby
 Talk.create({topic: "Playing with Models in the Rails Console"})
@@ -193,4 +207,6 @@ rake db:seed
 
 The `seed.rb` file is magic, because it _already_ knows about all of the models and gems in your rails app. All you have to do is tell it what data to create!
 
-Can you seed your database with speaker and talks?
+**Can you seed your database with speaker and talks?**
+
+**Bonus**: can you do it with the FFaker gem?
