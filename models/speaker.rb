@@ -2,11 +2,11 @@
 
 class Speaker
 
-  attr_accessor :first_name, :last_name, :email
+  attr_accessor :first, :last, :email
 
   # def initialize(args)
-  #   @first_name = args[:first_name]
-  #   @last_name = args[:last_name]
+  #   @first = args[:first]
+  #   @last = args[:last]
   #   @email = args[:email]
   # end
 

@@ -18,12 +18,13 @@ When you run `ruby 2_speakers.rb` you should see 10 lines of output, formatted l
     Waters Nayeli, annabel_walter@gmail.com, 415-793-2549
     ...
 
-    
+
 This output should _NOT_ be hardcoded. It should change for every run of the file!
 
-To achieve this goal, you will need to familiarize yourself with the `ffaker` gem. 
+To achieve this goal, you will need to familiarize yourself with the `ffaker` gem.
 
 First, install the gems in your `Gemfile`. Simply run:  
+
 ```bash
 bundle install
 #or just
@@ -67,7 +68,7 @@ For more info about `bundler`, try running `bundle --help`.
 ### 3. Motivational Talks
 Printing to the terminal is all very nice, but we want to actually be able to play with the data. Let's convert our talks into _objects_. When you run `3_talks_data.rb` you should see something along the lines of:
 
-    
+
     Speakers:
     {first: "Rachel", last: "Theresia", email: "giovani@gmail.com"}
     {first: "Botsford", last: "Vicenta", email: "ernestine@gmail.com"}
@@ -111,11 +112,13 @@ reichel = Speaker.new({first: "Rachel", last: "Theresia", email: "giovani@gmail.
 reichel.save
 ```
 or
+
 ```ruby
 reichel = Speaker.create({first: "Rachel", last: "Theresia", email: "giovani@gmail.com"})
 ```
 
 We can also query for `all` the records in our pretend "database":
+
 ```ruby
 puts Speaker.all
 ```
@@ -127,6 +130,7 @@ This has been a very light introduction to faking data, seeding your database, a
 
 ####1. Create a new rails application
 **Make sure you're in a new project folder**
+
 ``` bash
 rails new conference_app -T -d postgresql
 cd conference_app
@@ -134,29 +138,33 @@ bundle
 git init
 git add . -A
 git commit -m "inital commit, rails skeleton"
-subl .
+atom .
 ```
 
-####2. Create a `Talk` model
+####2. Create a `Talk` model  
+
 ``` bash
 rails g model talk topic:string duration:integer
-git diff # take a look at the files you just created!
+git status # take a look at the files you just created!
 ```
 
 And take a look at the following files:  
-* `app/models/talk.rb`
+* `app/models/talk.rb`  
 * `db/migrate/1234566789_create_talks.rb`
 
 ####3. Setup your database
 Download and Launch Postgres.app. You should see an elephant in your menu if it's running.
 
 Next, create your application database:
-```bash
+
+```bash  
 rake db:create # create a new database on your machine
 rake db:migrate # instruct your database what tables it needs to contain
 ```
 
 ####4. Launch the rails console and create your first talk!
+
+
 ```bash
 rails console
 # or
@@ -164,18 +172,20 @@ rails c
 ```
 
 **Confirm that your model exists**  
-```ruby
+
+``` ruby  
 Talk
- #=> Talk(id: integer, topic: string, duration: integer, created_at: datetime, updated_at: datetime) 
+ #=> Talk(id: integer, topic: string, duration: integer, created_at: datetime, updated_at: datetime)
 ```
 
 (You may need to "connect" to your database in the rails console. Just follow the instructions.)
 
 **Create your first record**!
-``` ruby
+
+``` ruby  
 Talk.create({topic: "Playing with Models in the Rails Console"})
 Talk.count
-Talk.all
+Talk.all  
 ```
 
 **Try the following:**  
@@ -200,6 +210,7 @@ p "Hello from seed.rb"
 ```
 
 Now run the following from your command line (not the console!):
+
 ```bash
 rake db:seed
 # Hello from seed.rb
