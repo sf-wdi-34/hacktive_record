@@ -13,7 +13,7 @@ Bonus: print it ten times.
 ### 2. Motivational Speakers
 When you run `ruby 2_speakers.rb` you should see 10 lines of output, formatted like so:
 
-    Reichel Theresia, giovani@gmail.com, 415-253-3253
+    Rachel Theresia, giovani@gmail.com, 415-253-3253
     Botsford Vicenta, ernestine@gmail.com, 716-282-1443
     Waters Nayeli, annabel_walter@gmail.com, 415-793-2549
     ...
@@ -69,7 +69,7 @@ Printing to the terminal is all very nice, but we want to actually be able to pl
 
     
     Speakers:
-    {first: "Reichel", last: "Theresia", email: "giovani@gmail.com"}
+    {first: "Rachel", last: "Theresia", email: "giovani@gmail.com"}
     {first: "Botsford", last: "Vicenta", email: "ernestine@gmail.com"}
     {first: "Waters", last: "Nayeli", email: "annabel_walter@gmail.com"}
     ...
@@ -90,7 +90,7 @@ Now let's take it up a notch. Instead of printing out objects, let's print out _
 You'll need to modify the code in `models/speaker.rb` so that you can do something like this in `4_model_speakers.rb`:
 
 ```ruby
-puts Speaker.new({first: "Reichel", last: "Theresia", email: "giovani@gmail.com"})
+puts Speaker.new({first: "Rachel", last: "Theresia", email: "giovani@gmail.com"})
 ```
 
 ### 5. Hacktive Record
@@ -107,12 +107,12 @@ end
 Now, we have two options for saving our instances.
 
 ```ruby
-reichel = Speaker.new({first: "Reichel", last: "Theresia", email: "giovani@gmail.com"})
+reichel = Speaker.new({first: "Rachel", last: "Theresia", email: "giovani@gmail.com"})
 reichel.save
 ```
 or
 ```ruby
-reichel = Speaker.create({first: "Reichel", last: "Theresia", email: "giovani@gmail.com"})
+reichel = Speaker.create({first: "Rachel", last: "Theresia", email: "giovani@gmail.com"})
 ```
 
 We can also query for `all` the records in our pretend "database":
