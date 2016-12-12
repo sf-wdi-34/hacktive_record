@@ -153,7 +153,6 @@ And take a look at the following files:
 * `db/migrate/1234566789_create_talks.rb`
 
 ####3. Setup your database
-Download and Launch Postgres.app. You should see an elephant in your menu if it's running.
 
 Next, create your application database:
 
