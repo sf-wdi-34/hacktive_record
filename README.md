@@ -101,7 +101,7 @@ Let's start by modifying our `Speaker` class so that it inherits from `HacktiveR
 
 ``` ruby
 require "./hacktive_record.rb"
-class Speaker << HacktiveRecord::Base
+class Speaker < HacktiveRecord::Base
 end
 ```
 
