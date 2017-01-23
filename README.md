@@ -1,5 +1,5 @@
 # Hacktive Record
-In this lab you will learn how to create seed data and use a simplified ORM dubbed "HacktiveRecord" (a pun on "ActiveRecord" which you'll be using in Rails). We will be working with the `FFaker` gem and modeling our data using classes and inheritance.
+In this lab you will learn how to create seed data and use a simplified ORM dubbed "HacktiveRecord" (a pun on "ActiveRecord" from Rails). We will be working with the `FFaker` gem and modeling our data using classes and inheritance.
 
 ### 1. Hello World
 When you run `ruby 1_hello.rb` you should see the following printed to your terminal:
@@ -126,97 +126,4 @@ puts Speaker.all
 **Stretch**: Can you model both a `Speaker` and a `Talk` object, using our simplified HacktiveRecord? (Hint: you may need to specify `speaker_id` on your talk objects so you know who they belong to!)
 
 #Ready for Rails!
-This has been a very light introduction to faking data, seeding your database, and working with models and inheritance. We're ready to dive into rails and work with ActiveRecord!
-
-####1. Create a new rails application
-**Make sure you're in a new project folder**
-
-``` bash
-rails new conference_app -T -d postgresql
-cd conference_app
-bundle
-git init
-git add . -A
-git commit -m "inital commit, rails skeleton"
-atom .
-```
-
-####2. Create a `Talk` model  
-
-``` bash
-rails g model talk topic:string duration:integer
-git status # take a look at the files you just created!
-```
-
-And take a look at the following files:  
-* `app/models/talk.rb`  
-* `db/migrate/1234566789_create_talks.rb`
-
-####3. Setup your database
-
-Next, create your application database:
-
-```bash  
-rake db:create # create a new database on your machine
-rake db:migrate # instruct your database what tables it needs to contain
-```
-
-####4. Launch the rails console and create your first talk!
-
-
-```bash
-rails console
-# or
-rails c
-```
-
-**Confirm that your model exists**  
-
-``` ruby  
-Talk
- #=> Talk(id: integer, topic: string, duration: integer, created_at: datetime, updated_at: datetime)
-```
-
-(You may need to "connect" to your database in the rails console. Just follow the instructions.)
-
-**Create your first record**!
-
-``` ruby  
-Talk.create({topic: "Playing with Models in the Rails Console"})
-Talk.count
-Talk.all  
-```
-
-**Try the following:**  
-* Create 3 new Talks in the Rails Console.
-* Delete the last talk you created
-* Find the first talk
-* Find the last talk
-* Search by id
-* Search by title
-* Sort by title
-* Update the title of the last talk you created
-* Delete all the talks you created.
-
-**Pro-Tip**: Remember, when you're working in the console/repl `up-arrow` is your friend! (That and "hanging a dot" + "double-tabbing").
-
-####5. Can you seed your database?
-Take a look at `db/seed.rb`.
-
-Add the following line:
-```ruby
-p "Hello from seed.rb"
-```
-
-Now run the following from your command line (not the console!):
-
-```bash
-rake db:seed
-# Hello from seed.rb
-```
-
-The `seed.rb` file is magic, because it _already_ knows about all of the models and gems in your rails app. All you have to do is tell it what data to create!
-
-**Can you seed your database with speaker and talks?**
-
-**Bonus**: can you do it with the FFaker gem?
+This has been a very light introduction to faking data, seeding your database, and working with models and inheritance. These are all tasks we'll use in Rails with ActiveRecord!
