@@ -1,9 +1,9 @@
 require 'ffaker'
-require './models/speaker.rb'
+require './models/director.rb'
 
 5.times do
   first = FFaker::Name.last
   last = FFaker::Name.first
   email = FFaker::Internet.free_email
-  # speaker = Speaker.new({})
+  # director = Director.new({})
 end

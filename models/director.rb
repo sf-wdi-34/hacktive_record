@@ -1,6 +1,6 @@
 # require "./hacktive_record.rb"
 
-class Speaker
+class Director
 
   attr_accessor :first, :last, :email
 
