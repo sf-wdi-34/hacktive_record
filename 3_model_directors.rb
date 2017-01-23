@@ -1,5 +1,5 @@
 require 'ffaker'
-require './models/speaker.rb'
+require './models/director.rb'
 
 5.times do
   args = {
@@ -8,9 +8,6 @@ require './models/speaker.rb'
             email: FFaker::Internet.free_email,
             phone: FFaker::PhoneNumber.short_phone_number
           }
-  speaker = Speaker.create(args)
-end
-
-Speaker.all.each do |speaker|
-  p speaker
+  director = Director.new(args)
+  p director
 end

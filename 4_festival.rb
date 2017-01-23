@@ -1,11 +1,11 @@
 require 'ffaker'
-require './models/speaker.rb'
-require './models/talk.rb'
+require './models/director.rb'
+require './models/movie.rb'
 
-# SEED DATABASE
+# "SEED DATA" - but no db yet!
 
 5.times do
-  Speaker.create({
+  Director.create({
     first_name: FFaker::Name.first_name,
     last_name: FFaker::Name.last_name,
     email: FFaker::Internet.free_email,
@@ -14,24 +14,24 @@ require './models/talk.rb'
 end
 
 5.times do
-  Talk.create({
-    topic: FFaker::Company.catch_phrase,
+  Movie.create({
+    title: FFaker::Movie.title,
     duration: rand(1..6)*15,
-    speaker_id: Speaker.all.sample.id
+    director_id: Director.all.sample.id
   })
 end
 
 
 # PRINT TO CONSOLE
 
-puts "Speakers"
+puts "Directors"
 puts "========"
-Speaker.all.each do |speaker|
-  p speaker
+Director.all.each do |director|
+  p director
 end
 
-puts "Talks"
+puts "Movies"
 puts "========"
-Talk.all.each do |talk|
-  p talk
+Movie.all.each do |movie|
+  p movie
 end
